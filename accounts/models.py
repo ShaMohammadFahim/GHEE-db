@@ -31,7 +31,7 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
     
     send_mail(
         "Password Reset for Ghee Ecommerce",
-        f"Apnar reset token holo: {reset_password_token.key}",
+        f" reset token : {reset_password_token.key}",
         "BoroVhai@ghee.com",
         [reset_password_token.user.email]
     )
