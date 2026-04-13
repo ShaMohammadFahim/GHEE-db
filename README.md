@@ -149,6 +149,30 @@ All product endpoints start with: `http://127.0.0.1:8000/api/products/`
 
 ---
 
+## Orders API Endpoints (Orders Module)
+
+All order endpoints start with: `http://127.0.0.1:8000/api/orders/`
+
+### Order Operations
+- **List user's orders:** `GET /api/orders/my-orders/`
+- **Create order:** `POST /api/orders/my-orders/` (Requires Customer role)
+```json
+{
+    "product": 1,
+    "quantity": 2
+}
+```
+- **Get single order:** `GET /api/orders/my-orders/{id}/`
+- **Update order:** `PUT /api/orders/my-orders/{id}/` (Admin only)
+- **Delete order:** `DELETE /api/orders/my-orders/{id}/` (Admin only)
+
+### Permission Rules
+- **Admins:** Can view all orders, update and delete any order
+- **Customers:** Can only create and view their own orders
+- **Other users:** Can only view their own orders (read-only)
+
+---
+
 ## Postman Setup Steps
 
 1. **Open Postman**
